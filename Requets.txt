@@ -1,0 +1,30 @@
+-- Active: 1676887500358@@192.168.56.10@3306@ECOLE
+create database ECOLE;
+USE ECOLE;
+CREATE TABLE
+    filieres(
+        id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        code VARCHAR(20),
+        libelle VARCHAR(30),
+        created_at TIMESTAMP,
+        updated_at TIMESTAMP,
+        deleted_at TIMESTAMP
+    );
+CREATE TABLE
+    etudiants(
+        id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        nom VARCHAR(20) NOT NULL,
+        prenoms VARCHAR(50),
+        age INT,
+        filiere int NOT NULL,
+        created_at TIMESTAMP,
+        updated_at TIMESTAMP,
+        deleted_at TIMESTAMP,
+        Foreign Key (filiere) REFERENCES filieres (id)
+    );
+    DESC ETUDIANT;
+    DESC FILIERE;
+    DROP Table `filieres`;
+    DROP Table `etudiants`;
+     ALTER TABLE FILIERE ENGINE = InnoDB;
+     SHOW ENGINES;
